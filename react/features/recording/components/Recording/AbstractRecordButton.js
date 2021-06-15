@@ -165,9 +165,9 @@ export function _mapStateToProps(state: Object, ownProps: Props): Object {
     }
 
     return {
-        _disabled,
-        _isRecordingRunning: Boolean(getActiveSession(state, JitsiRecordingConstants.mode.FILE)),
+        _disabled: false,
+        _isRecordingRunning: false,
         _tooltip,
-        visible
+        visible: true
     };
 }
