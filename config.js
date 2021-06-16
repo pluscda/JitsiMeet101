@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars, no-var */
 
-var config = {
+export default {
     // Connection
     //
 
@@ -15,10 +15,10 @@ var config = {
         // authdomain: 'jitsi-meet.example.com',
 
         // Focus component domain. Defaults to focus.<domain>.
-        // focus: 'focus.jitsi-meet.example.com',
+        focus: 'focus.jitsi-meet.example.com',
 
         // XMPP MUC domain. FIXME: use XEP-0030 to discover it.
-        muc: 'conference.jitsi-meet.example.com'
+        muc: 'conference.datacom.com.tw.example.com'
     },
 
     // BOSH URL. FIXME: use XEP-0156 to discover it.
@@ -189,7 +189,8 @@ var config = {
     // Recording
 
     // Whether to enable file recording or not.
-    // fileRecordingsEnabled: false,
+    fileRecordingsEnabled: true,
+
     // Enable the dropbox integration.
     // dropbox: {
     //     appKey: '<APP_KEY>' // Specify your app key here.
@@ -210,7 +211,8 @@ var config = {
     // fileRecordingsServiceSharingEnabled: false,
 
     // Whether to enable live streaming or not.
-    // liveStreamingEnabled: false,
+    liveStreamingEnabled: true,
+    hiddenDomain: 'recorder.alpha.jitsi.net',
 
     // Transcription (in interface_config,
     // subtitles and buttons can be configured)

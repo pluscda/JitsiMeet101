@@ -3,6 +3,7 @@
 import { jitsiLocalStorage } from '@jitsi/js-utils';
 import type { Dispatch } from 'redux';
 
+import myConfig from '../../../../config';
 import { isOnline } from '../net-info/selectors';
 
 import JitsiMeetJS from './_';
@@ -48,11 +49,14 @@ export function initLib() {
         }
 
         dispatch({ type: LIB_WILL_INIT });
+        const _config = Object.assign({}, config, myConfig);
+
+        console.log(JSON.stringify(_config, null, 2));
 
         try {
             JitsiMeetJS.init({
                 enableAnalyticsLogging: isAnalyticsEnabled(getState),
-                ...config,
+                ..._config,
                 externalStorage: jitsiLocalStorage.isLocalStorageDisabled() ? jitsiLocalStorage : undefined
             });
             JitsiMeetJS.setNetworkInfo({
